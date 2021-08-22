@@ -2,9 +2,8 @@
   <div class="feeds">
     <topline>
       <template #header>
-        <div class="icon">
-          <icon name="home" />
-        </div>
+        <logo />
+        <header-profile />
       </template>
       <template #content>
         <ul class="stories">
@@ -19,55 +18,44 @@
       </template>
     </topline>
     <div class="feeds__content">
-      <toggler @onToggle="toggle" />
-      <div class="comments" v-if="shown">
-        <ul class="comments__list">
-         <li class="comments-item" v-for="n in 5" :key="n">
-           <comment text="Some text" username="John Doe" />
-         </li>
-        </ul>
-      </div>
+      <project-list :projects="projects" />
     </div>
   </div>
 </template>
 
 <script>
 import { topline } from '../../components/topline'
-import { toggler } from '../../components/toggler'
-import { icon } from '../../icons'
 import { storyUserItem } from '../../components/storyUserItem'
-import { comment } from '../../components/comment'
+import { logo } from '../../components/logo'
 import stories from './data.json'
+import projects from './projects-data.json'
+import { headerProfile } from '../../components/headerProfile'
+import { projectList } from '../../components/projectList'
 export default {
   name: 'feeds',
   components: {
     topline,
-    icon,
-    toggler,
-    comment,
-    storyUserItem
+    logo,
+    storyUserItem,
+    headerProfile,
+    projectList
   },
   data () {
     return {
       stories,
-      shown: false
+      projects
+      // shown: false
     }
   },
   methods: {
-    handlePress () {
+    // handlePress () {
 
-    },
-    toggle (isOpened) {
-      this.shown = isOpened
-    }
+    // },
+    // toggle (isOpened) {
+    //   this.shown = isOpened
+    // }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-  .icon {
-    width: 50px;
-    height: 26px;
-    color: red;
-  }
-</style>
+<style lang="scss" scoped src="./feeds.scss"></style>

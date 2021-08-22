@@ -1,7 +1,8 @@
 <template>
   <div class="comment">
-    <p>
-      <span class="comment__username">{{ username }}</span>
+    <span class="comment__username">{{ username }}</span>
+    <p class="comment__paragraph">
+      {{ text }}
     </p>
   </div>
 </template>
@@ -11,7 +12,12 @@ export default {
   name: 'comment',
   props: {
     username: {
-      type: String
+      type: String,
+      required: true
+    },
+    text: {
+      type: String,
+      required: true
     }
   }
 }

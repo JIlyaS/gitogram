@@ -1,0 +1,29 @@
+.story-user-item {
+    margin-right: 31px;
+
+    // &:last-child {
+    //    margin-right: 0;
+    // }
+
+    &__avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 92px;
+        height: 92px;
+        margin-bottom: 10px;
+        border: #A6328D 2px solid;
+        border-radius: 50%;
+    }
+
+    &__img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    &__username {
+        font-size: 12px;
+        line-height: 10px;
+    }
+}

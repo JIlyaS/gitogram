@@ -1,0 +1,25 @@
+.header-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 145px;
+    height: 37px;
+
+    &__home {
+        width: 24px;
+        height: 25px;
+        color: #262626;
+    }
+
+    &__user {
+        width: 37px;
+        height: 37px;
+    }
+
+    &__logout {
+        width: 25px;
+        height: 21px;
+        color: #262626;
+    }
+}

@@ -10,8 +10,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #262626;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.8;;
+  line-height: 1.8;
 }
 
 ul {
@@ -52,7 +53,7 @@ button {
     min-height: 100%;
 }
 
-.k-container {
+.container {
   width: 1200px;
   margin: 0 auto;
 }

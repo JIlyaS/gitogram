@@ -1,9 +1,9 @@
 <template>
   <button class="story-user-item" @click="$emit('onPress')">
-    <div class="avatar">
-      <img :src="avatar" class="img" alt="username avatar" />
+    <div class="story-user-item__avatar">
+      <img :src="avatar" class="story-user-item__img" alt="username avatar" />
     </div>
-    <div class="username"> {{ username }} </div>
+    <div class="story-user-item__username"> {{ username }} </div>
   </button>
 </template>
 

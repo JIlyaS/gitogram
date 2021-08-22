@@ -12,8 +12,6 @@ export default {
       type: String,
       require: true,
       validator (value) {
-        console.log('🚀 ~ file: icon.vue ~ line 15 ~ validator ~ value', value)
-        console.log('🚀 ~ file: icon.vue ~ line 17 ~ validator ~ icons', icons)
         return Object.keys(icons).includes(value)
       }
     }

@@ -1,9 +1,9 @@
 <template>
   <button :class="['toggler', {active: isOpened}]" @click="toggle">
     <span class="toggler__text">
-      {{ isOpened ? 'Hide' : 'Show'}} issues
+      {{ isOpened ? 'Hide' : 'View'}} issues
     </span>
-    <span class="icon">
+    <span class="icon toggler__arrow">
       <icon name="triangle" />
     </span>
   </button>

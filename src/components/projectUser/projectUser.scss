@@ -1,0 +1,21 @@
+.project-user {
+    display: flex;
+    align-items: center;
+
+    &__avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+    }
+
+    &__name {
+        display: inline-block;
+        padding-left: 14px;
+
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: -0.1px;
+        color: #262626;
+    }
+}

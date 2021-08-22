@@ -2,8 +2,14 @@
     background-color: #FAFAFA;
     border-bottom: 1px solid #C6C6C8;
     padding: 42px 0 32px;
-}
+    margin-bottom: 32px;
 
-.content {
-    margin-top: 37px;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__content {
+        margin-top: 37px;
+    }
 }

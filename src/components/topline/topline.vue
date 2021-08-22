@@ -1,10 +1,10 @@
 <template>
   <div class="topline">
-    <div class="k-container">
-      <header class="header">
+    <div class="container">
+      <header class="topline__header">
         <slot name="header" />
       </header>
-      <div class="content" v-if="$slots.content">
+      <div class="topline__content" v-if="$slots.content">
         <slot name="content" />
       </div>
     </div>
