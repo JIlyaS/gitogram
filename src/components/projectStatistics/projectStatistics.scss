@@ -15,12 +15,17 @@
       font-size: 14px;
       line-height: 18px;
       color: #24292E;
+
+      &:hover .project-statistics__star {
+        color: #31AE54;
+      }
   }
 
   &__star {
       width: 15px;
       height: 14px;
       color: #586069;
+      transition: 0.3s;
   }
 
   &__star-text {
@@ -31,6 +36,7 @@
     width: 12px;
     height: 14px;
     color: #586069;
+    transition: 0.3s;
   }
 
   &__fork-text {
@@ -66,6 +72,10 @@
       font-size: 14px;
       line-height: 18px;
       color: #24292E;
+
+      &:hover .project-statistics__fork {
+          color: #31AE54;
+      }
   }
 
   &__fork-value {

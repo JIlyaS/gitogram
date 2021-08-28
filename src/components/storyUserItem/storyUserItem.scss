@@ -14,6 +14,10 @@
         margin-bottom: 10px;
         border: #A6328D 2px solid;
         border-radius: 50%;
+
+        &--active {
+            border: none;
+        }
     }
 
     &__img {

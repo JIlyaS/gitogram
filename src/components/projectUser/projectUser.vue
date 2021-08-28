@@ -1,7 +1,7 @@
 <template>
   <div class="project-user">
-    <img class="project-user__avatar" :src="avatar" width="44" height="44" alt="Avatar" />
-    <span class="project-user__name">{{ username }}</span>
+    <img class="project-user__avatar" :src="src" width="44" height="44" :alt="alt" />
+    <span class="project-user__name">{{ name }}</span>
   </div>
 </template>
 
@@ -9,11 +9,15 @@
 export default {
   name: 'projectUser',
   props: {
-    username: {
+    name: {
       type: String,
       required: true
     },
-    avatar: {
+    src: {
+      type: String,
+      required: true
+    },
+    alt: {
       type: String,
       required: true
     }

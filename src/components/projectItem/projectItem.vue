@@ -1,8 +1,8 @@
 <template>
   <article class="project-item">
-    <project-user :username="project.user.name" :avatar="project.user.avatar" />
+    <project-user :name="project.user.name" :src="project.user.avatar" :alt="Avatar" />
     <slot name="content" />
-    <toggler @onToggle="toggle" class="project-item__toggler" />
+    <toggler @toggle="toggle" class="project-item__toggler" />
     <div class="comments" v-if="shown">
       <ul class="comments__list">
         <li class="comments-item" v-for="comment in project.comments" :key="comment.id">

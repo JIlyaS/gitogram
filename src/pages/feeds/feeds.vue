@@ -9,8 +9,8 @@
         <ul class="stories">
           <li class="stories__item" v-for="story in stories" :key="story.id">
             <story-user-item
-              :avatar="story.avatar"
-              :username="story.username"
+              :src="story.avatar"
+              :name="story.username"
               @onPress="handlePress(story.id)"
             />
           </li>
@@ -44,16 +44,7 @@ export default {
     return {
       stories,
       projects
-      // shown: false
     }
-  },
-  methods: {
-    // handlePress () {
-
-    // },
-    // toggle (isOpened) {
-    //   this.shown = isOpened
-    // }
   }
 }
 </script>

@@ -1,8 +1,15 @@
 import { toggler } from './'
+import { action } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs'
+
+const methods = {
+  onToggle: action('onToggle')
+}
 
 export default {
   title: 'toggler',
-  components: { toggler }
+  components: { toggler },
+  decorators: [withKnobs]
 }
 
 export const defaultView = () => ({
@@ -10,8 +17,9 @@ export const defaultView = () => ({
     toggler
   },
   template: `
-    <avatar />
-  `
+    <toggler @toggle="onToggle" />
+  `,
+  methods
 })
 
 defaultView.story = {
