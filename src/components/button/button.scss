@@ -1,0 +1,27 @@
+.button {
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+
+    &--theme-green {
+        background-color: #31AE54;
+    }
+
+    &__text {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        /* identical to box height */
+
+        text-align: center;
+        letter-spacing: -0.15px;
+
+        color: #FFFFFF;
+    }
+
+    &--follow {
+        width: 270px;
+        height: 44px;
+    }
+}

@@ -9,8 +9,8 @@
         <ul class="stories">
           <li class="stories__item" v-for="story in stories" :key="story.id">
             <story-user-item
-              :avatar="story.avatar"
-              :username="story.username"
+              :src="story.avatar"
+              :name="story.username"
               @onPress="handlePress(story.id)"
             />
           </li>
@@ -31,6 +31,7 @@ import stories from './data.json'
 import projects from './projects-data.json'
 import { headerProfile } from '../../components/headerProfile'
 import { projectList } from '../../components/projectList'
+import * as api from '../../api'
 export default {
   name: 'feeds',
   components: {
@@ -40,20 +41,19 @@ export default {
     headerProfile,
     projectList
   },
+  async created () {
+    try {
+      const { data } = await api.trandings.getTrendings()
+      this.projects = data.items
+    } catch (error) {
+      console.error(error)
+    }
+  },
   data () {
     return {
       stories,
       projects
-      // shown: false
     }
-  },
-  methods: {
-    // handlePress () {
-
-    // },
-    // toggle (isOpened) {
-    //   this.shown = isOpened
-    // }
   }
 }
 </script>

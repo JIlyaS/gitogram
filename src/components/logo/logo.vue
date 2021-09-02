@@ -5,18 +5,7 @@
 </template>
 
 <script>
-export default {
-  // props: {
-  //   avatar: {
-  //     type: String,
-  //     required: true
-  //   },
-  //   username: {
-  //     type: String,
-  //     required: true
-  //   }
-  // }
-}
+export default {}
 </script>
 
 <style lang="scss" scoped src="./logo.scss" />
