@@ -54,8 +54,17 @@ export const defaultView = () => ({
       default: project
     }
   },
+  methods: {
+    getDataProject (project) {
+      return {
+        username: project.user.name || 'joshua_l',
+        avatar: project.user.avatar || 'https://picsum.photos/300/300',
+        date: project.date || new Date()
+      }
+    }
+  },
   template: `
-    <project-item :project="project">
+    <project-item v-bind="getDataProject(project)">
       <template #content>
         <div class="project-content">
           <h2 class="project-content__header">{{ project.projectName }}</h2>

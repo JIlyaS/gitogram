@@ -1,5 +1,5 @@
 import { projectUser } from './'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 export default {
   title: 'projectUser',
@@ -20,6 +20,9 @@ export const defaultView = () => ({
     },
     alt: {
       default: text('Alt', 'Avatar')
+    },
+    small: {
+      default: boolean('Small', false)
     }
   },
   template: `
@@ -29,4 +32,31 @@ export const defaultView = () => ({
 
 defaultView.story = {
   name: 'Стандартный вид'
+}
+
+export const smallView = () => ({
+  components: {
+    projectUser
+  },
+  props: {
+    name: {
+      default: text('Name', 'joshua_l')
+    },
+    src: {
+      default: text('Src', 'https://picsum.photos/300/300')
+    },
+    alt: {
+      default: text('Alt', 'Avatar')
+    },
+    small: {
+      default: boolean('Small', false)
+    }
+  },
+  template: `
+    <project-user :name="name" :src="src" :alt="alt" small />
+  `
+})
+
+smallView.story = {
+  name: 'Уменьшенный размер иконки и текста'
 }

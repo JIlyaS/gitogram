@@ -1,6 +1,6 @@
 <template>
   <article class="project-item">
-    <project-user :name="project.user.name" :src="project.user.avatar" :alt="Avatar" />
+    <project-user :name="username" :src="avatar" :alt="Avatar" />
     <slot name="content" />
     <toggler @toggle="toggle" class="project-item__toggler" />
     <div class="comments" v-if="shown">
@@ -27,8 +27,16 @@ export default {
     comment
   },
   props: {
-    project: {
-      type: Object,
+    username: {
+      type: String,
+      required: true
+    },
+    avatar: {
+      type: String,
+      required: true
+    },
+    date: {
+      type: Date,
       required: true
     }
   },
@@ -39,7 +47,7 @@ export default {
   },
   computed: {
     projectDate () {
-      return format(new Date(), 'd MMMM')
+      return format(new Date(this.date), 'd MMMM')
     }
   },
   methods: {

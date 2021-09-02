@@ -31,6 +31,7 @@ import stories from './data.json'
 import projects from './projects-data.json'
 import { headerProfile } from '../../components/headerProfile'
 import { projectList } from '../../components/projectList'
+import * as api from '../../api'
 export default {
   name: 'feeds',
   components: {
@@ -39,6 +40,14 @@ export default {
     storyUserItem,
     headerProfile,
     projectList
+  },
+  async created () {
+    try {
+      const { data } = await api.trandings.getTrendings()
+      this.projects = data.items
+    } catch (error) {
+      console.error(error)
+    }
   },
   data () {
     return {

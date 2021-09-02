@@ -1,5 +1,5 @@
 <template>
-  <div class="project-user">
+  <div :class="['project-user', {'project-user--small': small}]">
     <img class="project-user__avatar" :src="src" width="44" height="44" :alt="alt" />
     <span class="project-user__name">{{ name }}</span>
   </div>
@@ -20,6 +20,9 @@ export default {
     alt: {
       type: String,
       required: true
+    },
+    small: {
+      type: Boolean
     }
   }
 }

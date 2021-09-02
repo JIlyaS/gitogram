@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  name: 'storyUserItem',
   props: {
     src: {
       type: String,
