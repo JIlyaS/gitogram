@@ -1,13 +1,13 @@
 <template>
-  <div class="feeds">
+  <div class="repos">
     <topline>
       <template #header>
         <logo />
         <header-profile />
       </template>
       <template #content>
-        <ul class="stories">
-          <li class="stories__item" v-for="story in stories" :key="story.id">
+        <ul class="stories-user">
+          <li class="stories-user__item" v-for="story in stories" :key="story.id">
             <story-user-item
               :src="story.avatar"
               :name="story.username"
@@ -17,7 +17,7 @@
         </ul>
       </template>
     </topline>
-    <div class="feeds__content">
+    <div class="repos__content">
       <project-list :projects="projects" />
     </div>
   </div>
@@ -33,7 +33,7 @@ import { headerProfile } from '../../components/headerProfile'
 import { projectList } from '../../components/projectList'
 import * as api from '../../api'
 export default {
-  name: 'feeds',
+  name: 'repos',
   components: {
     topline,
     logo,
@@ -54,8 +54,13 @@ export default {
       stories,
       projects
     }
+  },
+  methods: {
+    handlePress () {
+      this.$router.push('/stories')
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped src="./feeds.scss"></style>
+<style lang="scss" scoped src="./repos.scss"></style>

@@ -1,8 +1,8 @@
 import { topline } from './'
 import { storyUserItem } from '../storyUserItem'
 import { logo } from '../logo'
-import stories from '../../pages/feeds/data.json'
-import projects from '../../pages/feeds/projects-data.json'
+import stories from '../../pages/repos/data.json'
+import projects from '../../pages/repos/projects-data.json'
 import { headerProfile } from '../headerProfile'
 import { projectList } from '../projectList'
 import { withKnobs } from '@storybook/addon-knobs'
@@ -10,7 +10,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import '../logo/logo.scss'
 import '../headerProfile/headerProfile.scss'
 import '../storyUserItem/storyUserItem.scss'
-import '../../pages/feeds/feeds.scss'
+import '../../pages/repos/repos.scss'
 
 export default {
   title: 'topline',

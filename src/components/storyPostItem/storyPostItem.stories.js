@@ -1,18 +1,18 @@
-import { storyPopup } from './'
+import { storyPostItem } from '.'
 import { withKnobs } from '@storybook/addon-knobs'
 
 export default {
-  title: 'storyPopup',
-  components: { storyPopup },
+  title: 'storyPostItem',
+  components: { storyPostItem },
   decorators: [withKnobs]
 }
 
 export const defaultView = () => ({
   components: {
-    storyPopup
+    storyPostItem
   },
   template: `
-    <story-popup />
+    <story-post-item />
   `
 })
 
