@@ -25,3 +25,17 @@ export const defaultView = () => ({
 defaultView.story = {
   name: 'Стандартный вид'
 }
+
+export const activeView = () => ({
+  components: {
+    cProgress: progress
+  },
+  methods,
+  template: `
+    <c-progress active @finish="onFinish" />
+  `
+})
+
+activeView.story = {
+  name: 'Активное состояние прогресса'
+}

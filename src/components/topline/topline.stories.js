@@ -39,8 +39,8 @@ export const defaultView = () => ({
           <header-profile />
         </template>
         <template #content>
-          <ul class="stories">
-            <li class="stories__item" v-for="story in stories" :key="story.id">
+          <ul class="stories-user">
+            <li class="stories-user__item" v-for="story in stories" :key="story.id">
               <story-user-item
                 :src="story.avatar"
                 :name="story.username"

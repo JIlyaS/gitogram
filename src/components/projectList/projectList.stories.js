@@ -68,19 +68,19 @@ const defaultValue = [{
     }
   ]
 
-const projects = array(label, defaultValue)
+const trendings = array(label, defaultValue)
 
 export const defaultView = () => ({
   components: {
     projectList
   },
   props: {
-    projects: {
-      default: projects
+    trendings: {
+      default: trendings
     }
   },
   template: `
-    <project-list :projects="projects" />
+    <project-list :trendings="trendings" />
   `
 })
 

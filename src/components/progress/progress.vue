@@ -19,10 +19,6 @@ export default {
     }
   },
   mounted () {
-    // this.$nextTick(() => {
-    //   this.active = true
-    // })
-
     this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
   },
   beforeUnmount () {
