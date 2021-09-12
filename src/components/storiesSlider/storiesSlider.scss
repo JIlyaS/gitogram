@@ -1,0 +1,22 @@
+.stories-slider {
+    &__container {
+      position: relative;
+      height: 660px;
+      padding-top: 50px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+
+        position: absolute;
+        left: 50%;
+
+        margin-left: -150px;
+        transition: .4s;
+    }
+
+    &__item {
+        margin: 0 19px;
+    }
+}

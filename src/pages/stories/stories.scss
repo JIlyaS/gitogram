@@ -1,0 +1,20 @@
+.stories {
+    height: 100vh;
+    background-color: #000000;
+
+    &__header {
+        padding-top: 48px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__close {
+        width: 23px;
+        height: 23px;
+        color: #ffffff;
+    }
+}

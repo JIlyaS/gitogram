@@ -1,0 +1,45 @@
+.placeholder {
+    &__img {
+      max-width: 266px;
+      width: calc(100% - 36px);
+      height: 136px;
+      margin-left: 18px;
+      margin-right: 18px;
+      margin-bottom: 44px;
+
+      background-color: #DEDEDE;
+      border-radius: 4px;
+    } 
+
+    &__text {
+        position: relative;
+        margin-left: 18px;
+        margin-right: 18px;
+        margin-bottom: 62px;
+
+        background-color: #DEDEDE;
+        border-radius: 4px;
+        width: 218px;
+        height: 14px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -22px;
+            background-color: #DEDEDE;
+            border-radius: 4px;
+            width: 177px;
+            height: 14px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 22px;
+            background-color: #DEDEDE;
+            border-radius: 4px;
+            width: 139px;
+            height: 14px;
+        }
+    }
+}

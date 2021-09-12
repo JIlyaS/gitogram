@@ -19,3 +19,16 @@ export const defaultView = () => ({
 defaultView.story = {
   name: 'Стандартный вид'
 }
+
+export const colorWhiteView = () => ({
+  components: {
+    logo
+  },
+  template: `
+    <logo white />
+  `
+})
+
+colorWhiteView.story = {
+  name: 'Логотип белый'
+}
