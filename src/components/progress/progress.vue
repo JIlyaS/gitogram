@@ -1,14 +1,15 @@
 <template>
-  <div :class={active} class="progress">
+  <div :class="['progress', {'progress--active': active}]">
     <div ref="indicator" class="progress__indicator"></div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      active: false
+  props: {
+    active: {
+      type: Boolean,
+      default: () => false
     }
   },
   emits: ['finish'],
@@ -18,9 +19,9 @@ export default {
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      this.active = true
-    })
+    // this.$nextTick(() => {
+    //   this.active = true
+    // })
 
     this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
   },

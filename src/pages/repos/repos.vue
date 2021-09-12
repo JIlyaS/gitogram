@@ -7,31 +7,32 @@
       </template>
       <template #content>
         <ul class="stories-user">
-          <li class="stories-user__item" v-for="story in stories" :key="story.id">
+          <li class="stories-user__item" v-for="trending in trendings" :key="trending.id">
             <story-user-item
-              :src="story.avatar"
-              :name="story.username"
-              @onPress="handlePress(story.id)"
+              :src="trending.owner.avatar_url"
+              :name="trending.owner.login"
+              @onPress="handlePress(trending.id)"
             />
           </li>
         </ul>
       </template>
     </topline>
     <div class="repos__content">
-      <project-list :projects="projects" />
+      <project-list :trendings="trendings" />
     </div>
   </div>
 </template>
 
 <script>
+import {
+  mapState,
+  mapActions
+} from 'vuex'
 import { topline } from '../../components/topline'
 import { storyUserItem } from '../../components/storyUserItem'
 import { logo } from '../../components/logo'
-import stories from './data.json'
-import projects from './projects-data.json'
 import { headerProfile } from '../../components/headerProfile'
 import { projectList } from '../../components/projectList'
-import * as api from '../../api'
 export default {
   name: 'repos',
   components: {
@@ -41,23 +42,20 @@ export default {
     headerProfile,
     projectList
   },
-  async created () {
-    try {
-      const { data } = await api.trandings.getTrendings()
-      this.projects = data.items
-    } catch (error) {
-      console.error(error)
-    }
+  created () {
+    this.fetchTrendings()
   },
-  data () {
-    return {
-      stories,
-      projects
-    }
+  computed: {
+    ...mapState({
+      trendings: state => state.trendings.trendings
+    })
   },
   methods: {
-    handlePress () {
-      this.$router.push('/stories')
+    ...mapActions({
+      fetchTrendings: 'trendings/fetchTrendings'
+    }),
+    handlePress (id) {
+      this.$router.push({ name: 'stories', params: { initialSlide: id } })
     }
   }
 }

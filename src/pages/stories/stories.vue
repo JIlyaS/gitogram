@@ -12,7 +12,7 @@
         </div>
       </header>
       <div class="stories__content">
-        <stories-slider />
+        <stories-slider :initialSlide="Number($route.params.initialSlide)" />
       </div>
     </div>
   </div>
@@ -29,8 +29,7 @@ export default {
     icon,
     storiesSlider
   },
-  async created () {
-  },
+  async created () {},
   data () {
   }
 }
