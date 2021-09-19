@@ -3,7 +3,7 @@
     <topline>
       <template #header>
         <logo />
-        <header-profile />
+        <header-profile :avatar="avatar" :username="username" />
       </template>
       <template #content>
         <ul class="stories-user">
@@ -26,13 +26,15 @@
 <script>
 import {
   mapState,
-  mapActions
+  mapActions,
+  mapGetters
 } from 'vuex'
 import { topline } from '../../components/topline'
 import { storyUserItem } from '../../components/storyUserItem'
 import { logo } from '../../components/logo'
 import { headerProfile } from '../../components/headerProfile'
 import { projectList } from '../../components/projectList'
+
 export default {
   name: 'repos',
   components: {
@@ -42,13 +44,20 @@ export default {
     headerProfile,
     projectList
   },
-  created () {
+  data () {
+    return {
+      avatar: JSON.parse(localStorage.getItem('user')).avatar_url,
+      username: JSON.parse(localStorage.getItem('user')).login
+    }
+  },
+  async created () {
     this.fetchTrendings()
   },
   computed: {
     ...mapState({
       trendings: state => state.trendings.trendings
-    })
+    }),
+    ...mapGetters(['getUnsterredOnly'])
   },
   methods: {
     ...mapActions({

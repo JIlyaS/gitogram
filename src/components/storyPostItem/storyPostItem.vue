@@ -9,7 +9,7 @@
       </div>
       <div class="story-post-item__content">
         <div class="story-post-item__loader" v-if="loading">
-          <spinner />
+          <spinner class="spinner--stories" />
         </div>
         <div class="story-post-item__content-wrap" v-else>
           <div class="story-post-item__content-text" v-if="data.content?.length" v-html="data.content"></div>
@@ -17,8 +17,13 @@
         </div>
       </div>
       <div class="story-post-item__footer">
-        <c-button class="button--follow">
-          Follow
+        <c-button
+         :loading="data.following.loading"
+          @click="$emit(data.following.status ? 'onUnFollow' : 'onFollow', data.id)"
+          class="button--follow"
+          :theme="data.following.status ? 'grey' : 'green'"
+        >
+          {{ data.following.status ? 'Unfollow' : 'Follow' }}
         </c-button>
       </div>
     </div>
@@ -55,7 +60,7 @@ export default {
     spinner,
     placeholder
   },
-  emits: ['onPrevSlide', 'onNextSlide', 'onProgressFinish'],
+  emits: ['onPrevSlide', 'onNextSlide', 'onProgressFinish', 'onFollow', 'onUnFollow'],
   props: {
     active: {
       type: Boolean,

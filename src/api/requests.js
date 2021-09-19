@@ -6,4 +6,17 @@ const client = axios.create({
   baseUrl: BASE_URL
 })
 
-export const makeRequest = ({ url, method = 'get', data = {}, headers = {} }) => client({ url, method, data, headers })
+export const makeRequest = ({
+  url,
+  method = 'get',
+  data = {},
+  headers = {}
+}) => client({
+  url,
+  method,
+  data,
+  headers: {
+    Authorization: `token ${localStorage.getItem('token')}`,
+    ...headers
+  }
+})
