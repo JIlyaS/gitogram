@@ -36,6 +36,7 @@ export default {
   methods: {
     getDataTrending (trending) {
       return {
+        id: trending.id,
         username: trending.owner?.login || 'no name',
         avatar: trending.owner?.avatar_url || 'https://picsum.photos/300/300',
         date: trending.updated_at || new Date()

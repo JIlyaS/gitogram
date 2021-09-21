@@ -9,6 +9,9 @@ export default {
 
     readmeHTML: [],
     errorReadme: ''
+
+    // issues: [],
+    // errorIssues: ''
   },
   getters: {
     getRepoById: (state) => (id) => state.trendings.find(item => item.id === id)
@@ -56,6 +59,15 @@ export default {
         return repo
       })
     }
+    // FETCH_ISSUES (state, payload) {
+    //   state.loadingIssues = payload
+    // },
+    // SET_ISSUES_DATA (state, payload) {
+    //   state.issues = payload
+    // },
+    // SET_ISSUES_ERROR (state, payload) {
+    //   state.errorIssues = payload
+    // }
   },
   actions: {
     async fetchTrendings ({ commit }) {
@@ -81,6 +93,16 @@ export default {
         console.error(error)
       }
     },
+    // async fetchIssues ({ commit, getters }, id) {
+    //   const { name: repo, owner } = getters.getRepoById(id)
+    //   try {
+    //     const { data } = await api.trendings.getIssues({ owner: owner.login, repo })
+    //     commit('SET_ISSUES_DATA', data)
+    //   } catch (error) {
+    //     commit('SET_ISSUES_ERROR', 'Не удалось получить комментарии пользователей')
+    //     console.error(error)
+    //   }
+    // },
     async starRepo ({ commit, getters }, id) {
       const { name: repo, owner } = getters.getRepoById(id)
       commit('SET_FOLLOWING', {

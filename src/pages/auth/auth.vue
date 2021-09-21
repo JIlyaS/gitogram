@@ -23,9 +23,7 @@
 
 <script>
 import {
-  // mapState,
   mapActions
-  // mapGetters
 } from 'vuex'
 import { icon } from '../../icons'
 import { button } from '../../components/button'

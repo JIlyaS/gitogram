@@ -22,3 +22,9 @@ export const getTrendings = (lang = 'javascript') => {
     url: `https://api.github.com/search/repositories?${params}`
   })
 }
+
+export const getIssues = ({ owner, repo }) => {
+  return makeRequest({
+    url: `https://api.github.com/repos/${owner}/${repo}/issues`
+  })
+}

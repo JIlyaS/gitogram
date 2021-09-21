@@ -42,4 +42,34 @@
             height: 14px;
         }
     }
+
+    &__content {
+         position: relative;
+         margin-bottom: 42px;
+
+         background-color: #EAEAEA;
+         border-radius: 4px;
+         width: 298px;
+         height: 22px;
+
+         &:before {
+             content: '';
+             position: absolute;
+             top: -32px;
+             background-color: #EAEAEA;
+             border-radius: 4px;
+             width: 504px;
+             height: 22px;
+         }
+
+         &:after {
+             content: '';
+             position: absolute;
+             top: 32px;
+             background-color: #EAEAEA;
+             border-radius: 4px;
+             width: 216px;
+             height: 22px;
+         }
+    }
 }

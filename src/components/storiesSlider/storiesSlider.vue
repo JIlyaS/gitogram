@@ -83,7 +83,7 @@ export default {
         getComputedStyle(item).getPropertyValue('width'), 10
       )
       this.slideNdx = slideNdx
-      this.slidePosition = -(slideWidth * slideNdx)
+      this.slidePosition = -(slideWidth * slideNdx * 1.15)
       slider.style.transform = `translateX(${this.slidePosition}px)`
     },
     progressFinish (ndx) {
