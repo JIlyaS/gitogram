@@ -1,0 +1,45 @@
+.button {
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #9E9E9E;
+    }
+
+    &--green {
+        background-color: #31AE54;
+    }
+
+    &--grey {
+        background-color: #9E9E9E;
+    }
+
+
+    &__text {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        /* identical to box height */
+
+        text-align: center;
+        letter-spacing: -0.15px;
+
+        color: #FFFFFF;
+    }
+
+    &--follow {
+        max-width: 270px;
+        width: 100%;
+        height: 44px;
+    }
+
+    &__loading {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        color: #ffffff;
+    }
+}

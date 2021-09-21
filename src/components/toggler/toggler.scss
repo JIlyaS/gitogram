@@ -1,29 +1,29 @@
 .toggler {
-    display: inline-flex;
-    align-items: center;
-    padding: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
 
-    &__text {
-        display: inline-block;
-        margin-right: 5px;
+  &__text {
+    display: inline-block;
+    margin-right: 5px;
 
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 22px;
-        color: #292929;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #292929;
+  }
+
+  &__arrow {
+    width: 10px;
+    height: 6px;
+    color: #212121;
+    transform: rotate(0deg);
+    transition: 0.3s;
+  }
+
+  &.active {
+    .toggler__arrow {
+      transform: rotate(180deg);
     }
-
-    &__arrow {
-        width: 10px;
-        height: 6px;
-        color: #212121;
-        transform: rotate(0deg);
-        transition: 0.3s;
-    }
-
-    &.active {
-        .toggler__arrow {
-            transform: rotate(180deg);
-        }
-    }
+  }
 }

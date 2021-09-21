@@ -2,6 +2,24 @@
     display: flex;
     align-items: center;
 
+    &--small {
+        .project-user__avatar {
+            width: 32px;
+            height: 32px;
+        }
+
+        .project-user__name {
+           display: inline-block;
+           padding-left: 12px;
+
+           font-weight: 700;
+           font-size: 14px;
+           line-height: 22px;
+           letter-spacing: -0.1px;
+           color: #292929;
+        }
+    }
+
     &__avatar {
         width: 44px;
         height: 44px;

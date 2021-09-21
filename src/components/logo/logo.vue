@@ -1,21 +1,21 @@
 <template>
-  <div class="logo">
-    <img class="logo__img" src="../../assets/logo.svg" width="175" height="36" alt="logo" />
+  <div :class="['logo', { 'logo--white': white }]">
+    <icon name="logo" />
   </div>
 </template>
 
 <script>
+import { icon } from '../../icons'
 export default {
-  // props: {
-  //   avatar: {
-  //     type: String,
-  //     required: true
-  //   },
-  //   username: {
-  //     type: String,
-  //     required: true
-  //   }
-  // }
+  name: 'logo',
+  props: {
+    white: {
+      type: Boolean
+    }
+  },
+  components: {
+    icon
+  }
 }
 </script>
 

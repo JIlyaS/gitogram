@@ -1,6 +1,9 @@
 .logo {
-    &__img {
-        width: 175px;
-        height: 36px;
+    width: 175px;
+    height: 36px;
+    color: #292929;
+
+    &--white {
+      color: #FFFFFF;
     }
 }
